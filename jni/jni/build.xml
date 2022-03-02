@@ -21,9 +21,8 @@
 		<jar destfile="../libs/vtm-jni-natives.jar">
 			<fileset dir="../libs/linux64" includes="libvtm-jni64.so"/>
 			<fileset dir="../libs/linux32" includes="libvtm-jni.so"/>
-			<fileset dir="../libs/macosx32" includes="libvtm-jni.so"/>
-			<fileset dir="../libs/windows32" includes="libvtm-jni.dylib"/>
-			<fileset dir="../libs/windows64" includes="libvtm-jni.a"/>
+			<fileset dir="../libs/windows32" includes="vtm-jni.dll"/>
+			<fileset dir="../libs/windows64" includes="vtm-jni64.dll"/>
 
 		</jar>
 	</target>

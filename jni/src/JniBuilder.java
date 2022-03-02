@@ -59,13 +59,13 @@ public class JniBuilder {
         lin64.cFlags += cflags;
         lin64.cppFlags += cflags;
 
-        BuildTarget mac = BuildTarget
-                .newDefaultTarget(TargetOs.MacOsX, false);
-        mac.headerDirs = headers;
-        mac.cIncludes = sources;
-        mac.cFlags += cflags;
-        mac.cppFlags += cflags;
-        mac.linkerFlags += " -framework CoreServices -framework Carbon";
+//        BuildTarget mac = BuildTarget
+//                .newDefaultTarget(TargetOs.MacOsX, false);
+//        mac.headerDirs = headers;
+//        mac.cIncludes = sources;
+//        mac.cFlags += cflags;
+//        mac.cppFlags += cflags;
+//        mac.linkerFlags += " -framework CoreServices -framework Carbon";
 
         BuildTarget android = BuildTarget
                 .newDefaultTarget(TargetOs.Android, false);
@@ -88,7 +88,7 @@ public class JniBuilder {
                         android,
                         lin64,
                         lin32,
-                        mac,
+//                        mac,
                         ios,
                         //win32home,
                         win32,
