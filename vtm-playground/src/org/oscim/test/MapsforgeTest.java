@@ -73,11 +73,13 @@ public class MapsforgeTest extends GdxMapApp {
         VectorTileLayer l = mMap.setBaseMap(tileSource);
         loadTheme(null);
 
-        BuildingLayer buildingLayer = s3db ? new S3DBLayer(mMap, l, SHADOWS) : new BuildingLayer(mMap, l, false, SHADOWS);
-        mMap.layers().add(buildingLayer);
+//        BuildingLayer buildingLayer = s3db ? new S3DBLayer(mMap, l, SHADOWS) : new BuildingLayer(mMap, l, false, SHADOWS);
+//        mMap.layers().add(buildingLayer);
+        BuildingLayer buildingLayer = new BuildingLayer(mMap, l, 14, mMap.viewport().getMaxZoomLevel(), false, false); 
+        mMap.layers().add(buildingLayer); 
 
         if (poi3d)
-            mMap.layers().add(new Poi3DLayer(mMap, l));
+            mMap.layers().add(new Poi3DLayer(mMap, l)); 
 
         mMap.layers().add(new LabelLayer(mMap, l));
 

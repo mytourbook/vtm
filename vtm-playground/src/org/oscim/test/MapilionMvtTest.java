@@ -60,13 +60,15 @@ public class MapilionMvtTest extends GdxMapApp {
         mMap.setTheme(VtmThemes.OPENMAPTILES);
 
         // Hillshading
-        UrlTileSource shadedTileSource = DefaultSources.MAPILION_HILLSHADE_2
-                .apiKey(API_KEY)
-                .httpFactory(factory)
-                .build();
-        mMap.layers().add(new BitmapTileLayer(mMap, shadedTileSource));
+//        UrlTileSource shadedTileSource = DefaultSources.MAPILION_HILLSHADE_2
+//                .apiKey(API_KEY)
+//                .httpFactory(factory)
+//                .build();
+//        mMap.layers().add(new BitmapTileLayer(mMap, shadedTileSource));
 
-        mMap.layers().add(new BuildingLayer(mMap, l));
+//      mMap.layers().add(new BuildingLayer(mMap, l));
+        mMap.layers().add(new BuildingLayer(mMap, l, 15, mMap.viewport().getMaxZoomLevel(), false, false));
+        
         mMap.layers().add(new LabelLayer(mMap, l));
 
         MapPosition pos = MapPreferences.getMapPosition();
