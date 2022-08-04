@@ -22,7 +22,9 @@ sourceSets {
     main.resources.srcDirs = ['resources']
 }
 
-mainClassName = "org.oscim.test.renderer.HexagonRenderTest"
+// TEST the test app with: /vtm-parent/run-playground.cmd
+mainClassName = "org.oscim.test.CircleTest"
+//mainClassName = "org.oscim.test.renderer.HexagonRenderTest"
 //mainClassName = "org.oscim.test.MapsforgeTest"
 //mainClassName = "org.oscim.test.MapilionMvtTest"
 
