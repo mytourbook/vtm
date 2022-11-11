@@ -42,3 +42,32 @@ subprojects {
         }
     }
 }
+
+subprojects {
+
+   /*
+    * Copy compile/debug dependencies into a common folder, the project classpath must be set accordingly
+    */
+    
+   task copyDebugFiles {
+   
+      doLast {
+   
+         // copy jars
+         copy 
+         {
+            from     configurations.compileClasspath
+            into     '../debug/libs'
+            exclude  '**/org/**'
+         }
+         
+         // copy resources
+         copy 
+         {
+            from     sourceSets.main.resources 
+            into     '../debug/resources'
+            exclude  '**/org/**'
+         }    
+      }
+   }
+}

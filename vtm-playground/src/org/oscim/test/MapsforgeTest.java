@@ -21,6 +21,7 @@ import org.oscim.core.BoundingBox;
 import org.oscim.core.MapPosition;
 import org.oscim.core.Tile;
 import org.oscim.event.Event;
+import org.oscim.gdx.GdxAssets;
 import org.oscim.gdx.GdxMapApp;
 import org.oscim.gdx.poi3d.Poi3DLayer;
 import org.oscim.layers.tile.buildings.BuildingLayer;
@@ -156,7 +157,12 @@ public class MapsforgeTest extends GdxMapApp {
     }
 
     public static void main(String[] args) {
-        GdxMapApp.init();
-        GdxMapApp.run(new MapsforgeTest(getMapFiles(args)));
+
+       GdxMapApp.init();
+       
+       // overwrite default folder
+       GdxAssets.init("debug/resources/assets/"); //$NON-NLS-1$
+
+       GdxMapApp.run(new MapsforgeTest(getMapFiles(args)));
     }
 }

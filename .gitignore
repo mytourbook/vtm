@@ -1,3 +1,6 @@
+bin/*
+debug/*
+
 */bin/*
 */gen/*
 */obj/*
@@ -27,8 +30,8 @@ robovm-build
 *.iml
 
 .settings
-.classpath
-.project
+xxx.classpath
+xxx.project
 project.properties
 
 local.properties
