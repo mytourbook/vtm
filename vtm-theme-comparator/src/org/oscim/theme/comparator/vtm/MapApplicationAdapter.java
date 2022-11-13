@@ -138,7 +138,7 @@ public class MapApplicationAdapter extends ApplicationAdapter {
             public boolean scrolled(float amountX, float amountY) {
                 super.scrolled(amountX, amountY);
                 MapPosition mapPosition = map.getMapPosition();
-                int zoomLevel = (int) (mapPosition.getZoomLevel() - amountX);
+                int zoomLevel = (int) (mapPosition.getZoomLevel() - amountY);
                 mapPosition.setZoomLevel(zoomLevel);
                 map.setMapPosition(mapPosition);
                 bothMapPositionHandler.mapPositionChangedFromVtmMap(mapPosition);
