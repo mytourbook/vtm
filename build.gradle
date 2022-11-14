@@ -46,11 +46,23 @@ subprojects {
 subprojects {
 
    /*
-    * Copy compile/debug dependencies into a common folder, the project classpath must be set accordingly
+     Copy compile/debug dependencies into a common folder, the project classpath must be set accordingly
+     
+     Run with:
+     
+     cd C:\DAT\MT\vtm-parent
+     gradlew copyDebugFiles
+    
     */
     
    task copyDebugFiles {
    
+      doFirst {
+          
+         // this do not work
+//         delete '../debug'
+      }
+
       doLast {
    
          // copy jars
@@ -58,6 +70,18 @@ subprojects {
          {
             from     configurations.compileClasspath
             into     '../debug/libs'
+            
+            include  '*.jar'
+            exclude  '**/org/**'
+         }
+
+         // copy natives
+         copy 
+         {
+            from     configurations.compileClasspath
+            into     '../debug/natives'
+            
+            exclude  '*.jar'
             exclude  '**/org/**'
          }
          
@@ -66,6 +90,7 @@ subprojects {
          {
             from     sourceSets.main.resources 
             into     '../debug/resources'
+            
             exclude  '**/org/**'
          }    
       }
