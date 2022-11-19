@@ -4,7 +4,8 @@ apply plugin: 'maven-publish'
 dependencies {
     api project(':vtm')
     api project(':vtm-themes')
-    api "com.badlogicgames.gdx:gdx:$gdxVersion"
+//  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+    api "com.badlogicgames.gdx:gdx-backend-lwjgl:1.11.0"
 }
 
 sourceSets {
